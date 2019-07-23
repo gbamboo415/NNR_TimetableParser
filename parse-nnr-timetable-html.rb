@@ -23,7 +23,7 @@ end
 def set_destination(train_num, acronym)
   case acronym
   when ""
-    # 列車番号依存 (福岡/太宰府/大牟田)
+    # 行先略称が空白の場合、列車番号依存 (福岡/太宰府/大牟田)
     if train_num =~ /[68L]..[13579]/
       "太宰府"
     elsif train_num =~ /...[13579]/
@@ -37,13 +37,9 @@ def set_destination(train_num, acronym)
     "二日市"
   when "宰"
     "太宰府"
-  when "筑"
+  when "筑", "筑○"
     "筑紫"
-  when "筑○"
-    "筑紫"
-  when "小"
-    "小郡"
-  when "小▲"
+  when "小", "小▲"
     "小郡"
   when "久"
     "久留米"

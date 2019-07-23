@@ -1,7 +1,4 @@
 module NNRTimetableParser
-  RE_HOUR      = /<td.+class="hour">(.+)<\/td>/
-  RE_TRAINDATA = /<a href=".+?keito_cd=..(....).+?">(\d\d)(.??)<br \/>(.*?)<\/a>/
-
   def self.set_traintype(acronym_t, acronym_tc)
     if acronym_t == ""
       if acronym_tc =~ /▲/
